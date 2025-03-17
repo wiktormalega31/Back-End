@@ -1,0 +1,6 @@
+@MagazineAPI_HostAddress = http://localhost:5109
+
+GET {{MagazineAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
