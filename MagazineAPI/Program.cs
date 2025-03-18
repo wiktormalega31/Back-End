@@ -30,6 +30,23 @@ if (app.Environment.IsDevelopment()) // Uruchamianie Swaggera tylko w trybie dev
         c.RoutePrefix = "swagger"; // Swagger dostępny pod /swagger
     });
 }
+app.Use(
+    async (context, next) =>
+    {
+        // 🔹 Pobierz klucz API z nagłówka
+        var apiKey = context.Request.Headers["X-API-KEY"].FirstOrDefault();
+        var validApiKey = "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"; // 👈 Ustaw swój klucz API
+
+        if (string.IsNullOrEmpty(apiKey) || apiKey != validApiKey)
+        {
+            context.Response.StatusCode = 401; // Unauthorized
+            await context.Response.WriteAsync("Unauthorized: Invalid API Key");
+            return;
+        }
+
+        await next(); // Przekaż żądanie do następnego middleware
+    }
+);
 
 app.UseAuthorization();
 app.MapControllers();

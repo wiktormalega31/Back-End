@@ -34,3 +34,4 @@ C:\Users\wikto\Desktop\PSK\Back-End\MagazineAPI\obj\Debug\net9.0\refint\Magazine
 C:\Users\wikto\Desktop\PSK\Back-End\MagazineAPI\obj\Debug\net9.0\MagazineAPI.pdb
 C:\Users\wikto\Desktop\PSK\Back-End\MagazineAPI\obj\Debug\net9.0\MagazineAPI.genruntimeconfig.cache
 C:\Users\wikto\Desktop\PSK\Back-End\MagazineAPI\obj\Debug\net9.0\ref\MagazineAPI.dll
+C:\Users\wikto\Desktop\PSK\Back-End\MagazineAPI\obj\Debug\net9.0\MagazineAPI.sourcelink.json

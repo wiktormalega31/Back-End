@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MagazineAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a53bcea3cc5d5d91b7c2fde21a6acdb8ace3990")]
 [assembly: System.Reflection.AssemblyProductAttribute("MagazineAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MagazineAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
