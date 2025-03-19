@@ -1,4 +1,7 @@
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
@@ -14,28 +17,39 @@ builder.Services.AddSwaggerGen(c =>
         {
             Title = "Back-End LAB test REST-API",
             Version = "v1",
-            Description = "Dokumentacja szkieletu RESTful API dla magazynu",
+            Description = "Dokumentacja szkieletu RESTful API dla obsługi logowania",
         }
     );
 });
 
+// 🔹 Dodanie obsługi CORS
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment()) // Uruchamianie Swaggera tylko w trybie dev
+// 🔹 Włączenie Swaggera
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API v1");
-        c.RoutePrefix = "swagger"; // Swagger dostępny pod /swagger
-    });
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API v1");
+    c.RoutePrefix = "swagger"; // Swagger dostępny pod /swagger
+});
+
+// 🔹 Włączenie CORS
+app.UseCors();
+
+// 🔹 Middleware do weryfikacji klucza API
 app.Use(
     async (context, next) =>
     {
-        // 🔹 Pobierz klucz API z nagłówka
         var apiKey = context.Request.Headers["X-API-KEY"].FirstOrDefault();
-        var validApiKey = "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"; // 👈 Ustaw swój klucz API
+        var validApiKey = "1234"; // 👈 Ustaw swój klucz API
 
         if (string.IsNullOrEmpty(apiKey) || apiKey != validApiKey)
         {
@@ -44,11 +58,10 @@ app.Use(
             return;
         }
 
-        await next(); // Przekaż żądanie do następnego middleware
+        await next(); // Przekaż żądanie do kolejnego middleware
     }
 );
 
 app.UseAuthorization();
 app.MapControllers();
-
 app.Run();

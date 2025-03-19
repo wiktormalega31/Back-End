@@ -35,3 +35,4 @@ C:\Users\wikto\Desktop\PSK\Back-End\MagazineAPI\obj\Debug\net9.0\MagazineAPI.pdb
 C:\Users\wikto\Desktop\PSK\Back-End\MagazineAPI\obj\Debug\net9.0\MagazineAPI.genruntimeconfig.cache
 C:\Users\wikto\Desktop\PSK\Back-End\MagazineAPI\obj\Debug\net9.0\ref\MagazineAPI.dll
 C:\Users\wikto\Desktop\PSK\Back-End\MagazineAPI\obj\Debug\net9.0\MagazineAPI.sourcelink.json
+C:\Users\wikto\Desktop\PSK\Back-End\MagazineAPI\bin\Debug\net9.0\BCrypt.Net-Next.dll
