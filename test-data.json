@@ -1,0 +1,15 @@
+{
+  "register": {
+    "Name": "TestUser",
+    "Email": "testuser@example.com",
+    "Password": "TestPassword123"
+  },
+  "login": {
+    "Name": "testuser@example.com",
+    "Password": "TestPassword123"
+  },
+  "invalidLogin": {
+    "Name": "wronguser@example.com",
+    "Password": "WrongPassword"
+  }
+}

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using MyApi.Models;
 
 [ApiController]
-[Route("api/auth/users")]
+[Route("api/users")]
 public class UsersController : ControllerBase
 {
     private readonly AppDbContext _context;
