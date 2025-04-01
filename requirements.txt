@@ -1,0 +1,7 @@
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.Tools
+Npgsql.EntityFrameworkCore.PostgreSQL
+Microsoft.AspNetCore.Authentication.JwtBearer
+BCrypt.Net-Next
+Swashbuckle.AspNetCore
